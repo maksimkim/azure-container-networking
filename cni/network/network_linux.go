@@ -92,7 +92,9 @@ func setupInfraVnetRoutingForMultitenancy(
 	result *cniTypesCurr.Result) {
 
 	if epInfo.EnableInfraVnet {
-		_, ipNet, _ := net.ParseCIDR(nwCfg.InfraVnetAddressSpace)
+		//_, ipNet, _ := net.ParseCIDR(nwCfg.InfraVnetAddressSpace)
+		_, ipNet, _ := net.ParseCIDR("10.192.0.1/10")
+
 		epInfo.Routes = append(epInfo.Routes, network.RouteInfo{Dst: *ipNet, Gw: azIpamResult.IPs[0].Gateway, DevName: infraInterface})
 	}
 }

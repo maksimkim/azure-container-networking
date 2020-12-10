@@ -184,7 +184,7 @@ func cleanupInfraVnetIP(
 }
 
 func checkIfSubnetOverlaps(enableInfraVnet bool, nwCfg *cni.NetworkConfig, cnsNetworkConfig *cns.GetNetworkContainerResponse) bool {
-	if enableInfraVnet {
+	/*if enableInfraVnet {
 		if cnsNetworkConfig != nil {
 			_, infraNet, _ := net.ParseCIDR(nwCfg.InfraVnetAddressSpace)
 			for _, cnetSpace := range cnsNetworkConfig.CnetAddressSpace {
@@ -196,7 +196,7 @@ func checkIfSubnetOverlaps(enableInfraVnet bool, nwCfg *cni.NetworkConfig, cnsNe
 				return infraNet.Contains(cnetSpaceIPNet.IP) || cnetSpaceIPNet.Contains(infraNet.IP)
 			}
 		}
-	}
+	}*/
 
 	return false
 }
